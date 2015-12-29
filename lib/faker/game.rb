@@ -15,14 +15,6 @@ module Faker
         %w(Credit Point Gem Orb)
       end
 
-      def adjective
-        %w(Gold Golden Bloodied Bloody Mighty Powerful Damaged Dark Black Silver Iron).sample
-      end
-
-      def noun
-        %w(Power War Heart Darkness Soul Lost).sample
-      end
-
       def hero
         %w(Soldier Hero Knight Savior Commander).sample
       end
@@ -35,35 +27,45 @@ module Faker
         %w(Ghost Titan Banshee Witch Insurgent Thief Ghoul Monster Tango Terrorist).sample
       end
 
-      def suffix
-        (%w(II III IV V VI X SE HD Remastered 2 3 4) << nil).sample
-      end
-
       def prefix
         "#{creator}'s #{franchise}"
       end
 
       def subtitle
-        [ "The #{verb_noun} of #{enemy.pluralize}",
-          "#{adjective} #{enemy.pluralize}",
-          "#{adjective} #{hero}" ].sample
+        ["The #{verb_noun} of #{enemy.pluralize}",
+         "#{adjective} #{enemy.pluralize}",
+         "#{adjective} #{hero}"].sample
       end
 
       def name
-        [ "The #{verb_noun} of #{enemy.pluralize}",
-          "#{franchise} #{suffix}".strip,
-          "#{enemy} #{verb_noun}",
-          "#{adjective} #{hero}",
-          franchise,
-          "#{prefix}", nil ].sample || name_with_franchise
+        ["The #{verb_noun} of #{enemy.pluralize}",
+         "#{franchise} #{suffix}".strip,
+         "#{enemy} #{verb_noun}",
+         "#{adjective} #{hero}",
+         franchise,
+         "#{prefix}", nil].sample || name_with_franchise
       end
 
       def name_with_franchise
         "#{creator}'s #{franchise} #{suffix}: #{subtitle}".squish
       end
 
+      private
+
       def creator
         "#{Faker::Name.first_name} #{Faker::Name.last_name}"
+      end
+
+      def adjective
+        %w(Gold Golden Bloodied Bloody Mighty Powerful Damaged Dark Black Silver Iron).sample
+      end
+
+      def noun
+        %w(Power War Heart Darkness Soul Lost).sample
+      end
+
+      def suffix
+        (%w(II III IV V VI X SE HD Remastered 2 3 4) << nil).sample
       end
     end
   end
