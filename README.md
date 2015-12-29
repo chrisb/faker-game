@@ -14,7 +14,7 @@ Faker::Game.ability_measurement # => "Mana"
 
 ## Game Currency
 
-Generates a singular form of an in-game currency.
+Generates the singular form of an in-game currency.
 
 ```ruby
 Faker::Game.currency # => "Gem"
@@ -34,7 +34,7 @@ Faker::Game.enemy # => "Ghoul"
 
 ## Complex Game Name Prefix
 
-Includes the name of a ficticious game creator.
+Includes the name of a fictitious game creator.
 
 ```ruby
 Faker::Game.prefix # => "Ryley Lang's Witch Fighter"
