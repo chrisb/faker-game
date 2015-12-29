@@ -12,7 +12,7 @@ module Faker
       end
 
       def currency
-        %w(Credit Point Gem Orb)
+        %w(Credit Point Gem Orb).sample
       end
 
       def hero
