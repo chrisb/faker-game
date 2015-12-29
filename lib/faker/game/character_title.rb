@@ -3,7 +3,7 @@ module Faker
     module CharacterTitle
       EVIL_BODY_PARTS_SINGULAR    = %w(anus blood flesh skin fat death eye sight)
       EVIL_BODY_PARTS             = %w(intestine colon gonad skull leg arm body head gut beast heart liver)
-      EVIL_VIOLENT_VERBS_AS_NOUNS = %w(vommitter cooker roaster punisher mutalator disfigurer clawer disembowler crusher masher ravisher banisher killer grasper tearer flayer eater ripper impaler chewer sucker severer wrencher sapper reamer walker feaster devourer destroyer tormentor defiler mincer)
+      EVIL_VIOLENT_VERBS_AS_NOUNS = %w(vommitter cooker roaster punisher mutilator disfigurer clawer disembowler crusher masher ravisher banisher killer grasper tearer flayer eater ripper impaler chewer sucker severer wrencher sapper reamer walker feaster devourer destroyer tormentor defiler mincer)
       EVIL_ADJECTIVES             = %w(evil dark rotting putrid forgotten terrible horrible nasty sickening putrifying banished outlawed)
       EVIL_NOUNS                  = %w(scourage terror horror ghoul ghost beast outlaw criminal demon)
       GOOD_NOUNS                  = %w(light wonder prosperity goodness truth)
