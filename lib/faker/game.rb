@@ -1,7 +1,9 @@
 require 'faker'
+require 'active_support/core_ext/string/inflections'
 require 'faker/game/character_title'
 require 'faker/game/place'
 require 'faker/game/character'
+require 'faker/game/achievement'
 
 module Faker
   module Game
@@ -15,7 +17,7 @@ module Faker
       end
 
       def currency
-        %w(Credit Point Gem Orb).sample
+        %w(Credit Point Gem Orb Coin).sample
       end
 
       def hero

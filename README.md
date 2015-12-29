@@ -92,6 +92,40 @@ Chance of either a neutral, evil, or good title.
 Faker::Game::Character.name_with_title # => "Byrwren Tyrwindearthborn, the Guard of Winterrealm"
 ```
 
+## Faker::Game::Achivement
+
+### Name
+
+Selects one of the following achievement names at random.
+
+```ruby
+Faker::Game::Achievement.name # => "Gather 170 Orbs"
+```
+
+### Assassination Achievement
+
+```ruby
+Faker::Game::Achievement.assassination # => "Kill The Dark Wrencher Of Beasts"
+```
+
+### Earn X Things
+
+```ruby
+Faker::Game::Achievement.earn # => "Find 1070 Gems"
+```
+
+### Discover a Place
+
+```ruby
+Faker::Game::Achievement.discover # => "Discover The Icy South"
+```
+
+### Kill X Enemies
+
+```ruby
+Faker::Game::Achievement.kill_enemies # => "Kill 240 Insurgents"
+```
+
 ## Faker::Game::CharacterTitle
 
 Poke around the source for all sorts of helpers for generating these.

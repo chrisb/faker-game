@@ -13,62 +13,34 @@ module Faker
       NEUTRAL_ADJECTIVES          = %w(stalwart honest faithful haggard tireless)
 
       class << self
-        def evil_proper
-          "the #{evil_base}"
-        end
-
-        def evil_with_qualifier
-          "#{send %w(evil_base evil_proper).sample}, #{evil_qualifier}"
-        end
-
         def evil
           send %w(evil_base evil_proper evil_with_qualifier).sample
-        end
-
-        def neutral_proper
-          "the #{neutral_base}"
-        end
-
-        def neutral_with_adjective
-          "#{send %w(neutral_base neutral_proper).sample} #{NEUTRAL_ADJECTIVES.sample}"
         end
 
         def neutral
           send %w(neutral_base neutral_proper neutral_with_adjective).sample
         end
 
-        def good_with_qualifier
-          "#{good_base} #{good_qualifier}"
-        end
-
-        def good_proper
-          "the #{good_base}"
-        end
-
         def good
           send %w(good_base good_proper good_with_qualifier).sample
         end
 
+        def evil_proper
+          "the #{evil_base}".titleize
+        end
+        
         private
 
         def evil_base
-          "#{(EVIL_ADJECTIVES + [nil]).sample} #{evil_descriptor}"
+          "#{(EVIL_ADJECTIVES + [nil]).sample} #{evil_descriptor}".titleize
         end
 
-        def neutral_base
-          "#{NEUTRAL_PROFESSIONS.sample} of #{Place.name}"
+        def evil_with_qualifier
+          "#{send %w(evil_base evil_proper).sample}, #{evil_qualifier}".titleize
         end
 
         def evil_qualifier
           "#{['the ', nil].sample}#{EVIL_NOUNS.sample} of #{Place.name}"
-        end
-
-        def good_qualifier
-          "#{['the ', nil].sample}#{GOOD_ANTI_VERBS_AS_NOUNS.sample} of #{EVIL_NOUNS.sample.pluralize}"
-        end
-
-        def good_base
-          "#{GOOD_NOUNS.sample}#{['-', nil].sample}#{GOOD_VERBS_AS_NOUNS.sample}"
         end
 
         def evil_descriptor
@@ -78,6 +50,34 @@ module Faker
           !singular && rand(2) == 1 ?
             "#{EVIL_VIOLENT_VERBS_AS_NOUNS.sample} of #{body_part.pluralize}" :
             "#{body_part}#{word_separator}#{EVIL_VIOLENT_VERBS_AS_NOUNS.sample}"
+        end
+
+        def neutral_base
+          "#{NEUTRAL_PROFESSIONS.sample} of #{Place.name}"
+        end
+
+        def neutral_proper
+          "the #{neutral_base}".titleize
+        end
+
+        def neutral_with_adjective
+          "#{send %w(neutral_base neutral_proper).sample} #{NEUTRAL_ADJECTIVES.sample}".titleize
+        end
+
+        def good_with_qualifier
+          "#{good_base} #{good_qualifier}".titleize
+        end
+
+        def good_proper
+          "the #{good_base}".titleize
+        end
+
+        def good_qualifier
+          "#{['the ', nil].sample}#{GOOD_ANTI_VERBS_AS_NOUNS.sample} of #{EVIL_NOUNS.sample.pluralize}"
+        end
+
+        def good_base
+          "#{GOOD_NOUNS.sample}#{['-', nil].sample}#{GOOD_VERBS_AS_NOUNS.sample}"
         end
 
         def word_separator
