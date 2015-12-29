@@ -1,4 +1,7 @@
 require 'faker'
+require 'faker/game/character_title'
+require 'faker/game/place'
+require 'faker/game/character'
 
 module Faker
   module Game
